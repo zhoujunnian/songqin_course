@@ -1,11 +1,11 @@
-# coding=utf8
+# coding=utf-8
 import time,os
 
-# 输出视频文件
-outputfile = 'd:/data/bandicam/tmp/'  + time.strftime('%Y%m%d_%H%M%S', time.localtime()) + '.mp4'
+# 输出视频文件,带上当前年月日_时分秒
+outputfile = '/Users/zhoujunjun/Movies'  + time.strftime('%Y%m%d_%H%M%S', time.localtime()) + '.mp4'
 
 # 工具目录
-ffmpegDir = r'd:\data\bandicam\tmp\ffmpeg.exe'
+ffmpegDir = '/usr/local/Cellar/ffmpeg/4.1_3/bin/ffmpeg'
 
 settings = [
     '-y -rtbufsize 100M -f gdigrab -framerate 10',   # 帧率等
@@ -17,7 +17,6 @@ settings = [
 
 # 将参数组合起来
 recordingCmdLine = ' '.join([ffmpegDir]+settings)
-
 # 查看命令内容
 print(recordingCmdLine)
 
