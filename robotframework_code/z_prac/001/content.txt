@@ -1,0 +1,15 @@
+**************    RF 作业 1     **************
+安装 如下 RF使用中需要的工具和库
+1. RF
+pip install robotframework -i https://pypi.douban.com/simple/
+2. RIDE
+pip install robotframework-ride -i https://pypi.douban.com/simple/
+3. wxpython
+到网盘中下载并安装
+  http://pan.baidu.com/s/1dEDFPID
+4. selenium2library
+pip install robotframework-selenium2library -i https://pypi.douban.com/simple/
+5. pycharm插件IntelliBot
+   	http://pan.baidu.com/s/1hrDakDI
+根据视频，用RIDE 自己手动输入一下课堂演示的百度搜索松勤并验证第一个搜索结果的例子
+用RIDE 和 命令行 两种方式运行一下

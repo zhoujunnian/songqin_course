@@ -1,0 +1,9 @@
+** 各浏览器 的 web driver 驱动下载
+
+
+
+安装Selenium 和 chrome 浏览器的webdrvier 驱动。
+
+访问天气查询网站，查询江苏省天气 http://www.weather.com.cn/html/province/jiangsu.shtml
+
+获取江苏所有城市的天气，并找出其中每天最低气温最低的城市（可能不止一个城市）

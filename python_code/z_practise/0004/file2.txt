@@ -1,0 +1,6 @@
+name:       Jack   ;    salary:   12000 ;  tax:   1200 ; income:   10800
+name:       Mike   ;    salary:   12300 ;  tax:   1230 ; income:   11070
+name:        Luk   ;    salary:   10030 ;  tax:   1003 ; income:    9027
+name:        Tim   ;    salary:    9000 ;  tax:    900 ; income:    8100
+name:       John   ;    salary:   12000 ;  tax:   1200 ; income:   10800
+name:       Lisa   ;    salary:   11000 ;  tax:   1100 ; income:    9900

@@ -1,0 +1,54 @@
+***** 编程题 0010 ******  
+
+获取统计 远程Linux主机的 可用内存率。
+
+
+请大家先安装 paramiko
+    到下面的网址下载 下载VCForPython27.msi
+    https://www.microsoft.com/en-us/download/details.aspx?id=44266
+
+    安装VCForPython27.msi后，再pip install paramiko
+
+
+请大家自行百度搜索，安装虚拟机管理器 virtualbox 或者 vmvareplayer， 创建 64位 虚拟机，
+安装centos镜像（下载地址 http://mirrors.163.com/centos/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1.iso ）
+
+
+    
+    
+然后编写一个python程序，代码文件名为 memory.py , 该代码文件 计划在远程Linux机器运行。该程序做如下的事情：
+    每隔5秒钟 打开文件 /proc/meminfo，该文件包含了系统内存使用信息，前面数行内容如下
+    
+MemTotal:        1920648 kB
+MemFree:           87788 kB
+Buffers:          229704 kB
+Cached:          1180244 kB
+
+    memory.py 程序要将 memFree 、buffers、cached 的值 相加 （结果是可用内存的数量）。
+    然后除以 MemTotal的值， 得到可用内存占的百分比（赋值给变量 avaMem）。
+    将 avaMem 的数值存入 结果文件ret.txt中。
+    
+    上面的程序一直运行，每隔 5秒钟 获取记录一次 avaMem 对应的时间戳， 格式如下
+    20170315_12:10:00  77%
+    20170315_12:10:05  74%
+    20170315_12:10:10  70%
+    20170315_12:10:15  72%
+    
+    
+
+
+再编写一个python程序，代码文件名为 remote_run.py，该程序运行起来做如下工作：
+    以自己名字的拼音（比如lixia） 在远程机器建立一个目录 。如果该目录已经存在则跳过此步骤
+    拷贝文件memory.py 到远程机器该目录下面，
+    远程在Linux主机执行文件 memory.py 
+    过5分钟后，将远程文件memory.py执行产生的结果文件ret.txt 内容拷贝回本机
+
+
+    编写上面的remote_run.py的时候，合理使用 异常捕获。
+
+
+
+
+请大家将两个代码文件打包到zip文件中，文件名为 0010_城市_名字 (比如 0010_深圳_李霞.zip ) QQ发给江老师
+
+

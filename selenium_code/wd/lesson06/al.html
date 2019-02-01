@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <title>3 kinds of alert</title>
+</head>
+<script>
+
+function appendEle(info) {
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode(info);
+    node.appendChild(textnode);
+    document.getElementById("add").appendChild(node);
+}
+
+function clickconf() {
+    if (confirm("I am an confirm box!") == true) {
+        appendEle("你点击了ok");
+    } else {
+        appendEle("你点击了cancel");
+    }
+}
+
+
+function clickprompt() {
+    var person = prompt("请输入你的名字", "clear");
+
+    if (person == null ) {
+        appendEle("你取消了输入");
+    } else {
+        appendEle("你输入了:" + person);
+    }
+}
+
+
+</script>
+<body>
+
+<br>
+<br>
+<button id="b1" onclick='alert("I am an alert box!");'>alert</button>
+
+<br>
+<br>
+<button id="b2" onclick='clickconf()'>confirm</button>
+
+<br>
+<br>
+<button id="b3" onclick='clickprompt()'>prompt</button>
+
+
+<br>
+<br>
+<button id="other" onclick='appendEle("按了其它按钮")'>其它按钮</button>
+<br>
+<br>
+
+<div id="add"></div>
+</body>
+</html>

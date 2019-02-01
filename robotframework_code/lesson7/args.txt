@@ -1,0 +1,6 @@
+--pythonpath .
+--name 回归测试
+--test *tc00001
+--test *tc00002
+--test *tc00005
+t1.robot

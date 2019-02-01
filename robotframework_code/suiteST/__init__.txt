@@ -1,0 +1,5 @@
+*** Settings ***
+Suite Setup       log to console    *** 11111*** suite ST - suite setup
+Suite Teardown    log to console    *** 11111*** suite ST - suite teardown
+Test Setup        log to console    *** 22222*** suite ST --- test setup
+Test Teardown     log to console    *** 22222*** suite ST --- test teardown

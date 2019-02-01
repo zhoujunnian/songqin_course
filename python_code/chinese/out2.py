@@ -1,0 +1,3 @@
+# coding=gbk
+#жпнд
+print('abc')

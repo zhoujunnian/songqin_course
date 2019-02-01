@@ -1,0 +1,6 @@
+name: Jack   ;    salary:  12000
+ name :Mike ; salary:  12300
+name: Luk ;   salary:  10030
+  name :Tim ;  salary:   9000
+name: John ;    salary:  12000
+name: Lisa ;    salary:   11000

@@ -1,0 +1,38 @@
+
+
+
+闵娟
+没有加strip 处理
+
+顾见 冯源园
+输入信息 没有 多考虑 结尾多一个分号Jack Green ,   21  ;  Mike Mos, 9;
+
+李新华
+str=raw_input('enter your name ,age')
+
+注意：最好不要注意定义 str内置函数
+
+
+陈艳琪 --- good
+if one == '' or one.count(',') != 1:
+检查是否为空或者是否无效输入 ，很好的意识， 但是前面的是多余的等价于
+if one.count(',') != 1:
+
+
+李博文
+有点不合题意，但是，做了详细的检查，很好
+
+Age.isdigit() == True
+Name.isalpha() == True
+多余了
+
+周盛 -- bad 参考 陈焰的代码
+代码很有问题
+
+
+
+
+
+
+
+陈焰 --- good

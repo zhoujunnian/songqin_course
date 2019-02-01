@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.6.2 on win32)" generated="20171203 16:30:56.132">
+<suite id="s1" name="T1" source="d:\gsync\workspace\sq\robotframework\samples\z_prac\002\t1.robot">
+<test id="s1-t1" name="测试2">
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>100</arg>
+</arguments>
+<assign>
+<var>${var1}</var>
+</assign>
+<msg timestamp="20171203 16:30:56.779" level="INFO">${var1} = 100</msg>
+<status status="PASS" starttime="20171203 16:30:56.779" endtime="20171203 16:30:56.779"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${var2}</var>
+</assign>
+<msg timestamp="20171203 16:30:56.780" level="INFO">${var2} = 5</msg>
+<status status="PASS" starttime="20171203 16:30:56.780" endtime="20171203 16:30:56.780"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>($var1*int($var2)) == 500</arg>
+</arguments>
+<status status="PASS" starttime="20171203 16:30:56.780" endtime="20171203 16:30:56.785"></status>
+</kw>
+<status status="PASS" starttime="20171203 16:30:56.763" endtime="20171203 16:30:56.785" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20171203 16:30:56.132" endtime="20171203 16:30:56.785"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="T1">T1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

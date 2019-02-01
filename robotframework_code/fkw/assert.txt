@@ -1,0 +1,6 @@
+| *** Test Cases *** |
+| test1 |
+|    | ${var}= | set variable | bad |
+|    | run keyword if | '${var}'=='good' | Pass Execution | 直接通过测试 |
+|    | run keyword if | '${var}'=='bad' | Fail | 直接判断不通过 |
+|    | log to console | left statements |

@@ -1,0 +1,16 @@
+**************    RF 作业 2     **************
+
+不要用RIDE，请直接在pycharm中，创建一个测试套件文件。
+
+该文件中包含 一个settings表和一个测试用例表
+settings表中导入库Selenium2Library
+
+测试用例表中包含 两个测试用例：
+用例1：
+检查网站http://www.114time.com/ 显示当前的年份是否是 2017年。
+Selenium2Library 有关键字 Get Text， 其参数 如果使用 css选择元素的方法 以'css='开头，后面加上 css选择表达式
+
+用例2：
+定义一个RF变量var1为整数 100
+定义一个RF变量var2为字符串 '5'
+用RF关键字 should be true 验证 var1 * int(var2) == 500

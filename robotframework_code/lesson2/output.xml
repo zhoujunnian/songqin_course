@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.6.2 on win32)" generated="20180624 11:08:10.913">
+<suite id="s1" name="T3" source="d:\gsync\workspace\sq\robotframework\samples\lesson2\t3.robot">
+<test id="s1-t1" name="验证">
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>20</arg>
+</arguments>
+<assign>
+<var>${num}</var>
+</assign>
+<msg timestamp="20180624 11:08:10.938" level="INFO">${num} = 20</msg>
+<status status="PASS" starttime="20180624 11:08:10.938" endtime="20180624 11:08:10.938"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$num&gt;19</arg>
+</arguments>
+<status status="PASS" starttime="20180624 11:08:10.938" endtime="20180624 11:08:10.944"></status>
+</kw>
+<status status="PASS" starttime="20180624 11:08:10.937" endtime="20180624 11:08:10.944" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20180624 11:08:10.915" endtime="20180624 11:08:10.946"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="T3">T3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
