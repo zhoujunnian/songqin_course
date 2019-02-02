@@ -1,3 +1,4 @@
+# coding=utf8
 from subprocess import PIPE, Popen
 import time,sys
 
@@ -6,11 +7,11 @@ popen = Popen(
     stdin  = PIPE,
     stdout = PIPE,
     stderr = PIPE,
-    shell=True,
-    encoding='utf8')
+    shell=True)
 
 inputList = [ '3','4','37','55']
-out,err = popen.communicate('\n'.join(inputList))
+#out,err = popen.communicate('\n'.join(inputList))
+out,err = popen.communicate("3")
 print(out, err)
 
 
