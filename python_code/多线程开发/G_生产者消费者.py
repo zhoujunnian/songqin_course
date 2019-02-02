@@ -18,7 +18,7 @@ def thread_producer():
         cmdNo += 1
 
         # 这里生产的资源，就先用一个字符串来表示
-        resource = f'command_{cmdNo}'
+        resource = 'command_{cmdNo}'
 
         # 随机等待一段时间,表示 生产资源的时间，就是输入命令耗费的时间
         time.sleep(randint(3,3))

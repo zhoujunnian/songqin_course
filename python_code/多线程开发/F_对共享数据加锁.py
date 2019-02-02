@@ -29,9 +29,9 @@ def thread1_didi_pay(account,amount):
     zhifubao[account] = balance - amount
 
     # 访问完共享对象 释放锁
-    # 访问结束后，一定要调用Lock对象的acquire方法，进行解锁操作。
+    # 访问结束后，一定要调用Lock对象的release方法，进行解锁操作。
     # 否则其它等待锁的线程将永远等待下去，成为死线程。
-    # zhifubao_lock.release()
+    zhifubao_lock.release()
 
 def thread2_yuebao_interest(account,amount):
     # 在代码访问共享对象之前 加锁
@@ -46,7 +46,7 @@ def thread2_yuebao_interest(account,amount):
     zhifubao[account] = balance + amount
 
     # 访问完共享对象 释放锁
-    # zhifubao_lock.release()
+    zhifubao_lock.release()
 
 
 t1 = threading.Thread(target=thread1_didi_pay,    args=('jcy',10))
