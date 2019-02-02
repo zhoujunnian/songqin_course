@@ -1,0 +1,59 @@
+python -m 执行模块：
+执行模块文件的方法
+python /home/hello.py
+python -m hello
+-m ，表示去sys.path找这个模块（modul）执行
+set PYTHONPAATH=e:\temp,表示把这个路径加到sys.path里面去
+
+什么是单元测试：
+单元测试：测试一小块代码的功能，比如一个函数，类的一个方法，是
+项目质量的基石，发现bug效率高，代价小
+集成测试：把被测系统的几个相互之间有交互模块作为一个整体进行测试，集成
+测试是子系统级别的测试
+系统测试、端到端的测试、功能测试：把整个被测系统看做一个整体进行测试，是
+整个系统的测试
+
+python unittest框架：
+是一个单元测试框架
+ 1.支持自动化
+ 2.支持初始化、清除设置
+ 3.将测试组织成用例、套件这样的层次关系
+
+概念：
+test fixture：装置
+  表示要进行某些测试前的准备工作和结束后的清除工作
+test case：用例
+  表示具体的对单个函数、方法的测试工作
+test suite：套件
+  表示具体的对单个函数、方法的测试工作，测试用例的集合
+test runner：执行器
+  最终控制测试执行，并且输出测试结果的模块
+
+例子：
+1.单元测试
+2.继承自unittest.TestCase
+3.setup,teardown 方法进行初始化和清除
+4.测试方法一定要以test开头
+5.assert系列的函数，进行检查点判断
+6.执行命令：python -m unittest test.py
+
+常用断言：
+assertEqual(a,b)  a==b
+assertNotEqual(a,b)  a!=b
+assertIn(a,b)  a in b
+assertNotIn(a,b)  a not in b
+
+test suite：
+概念的关系 python -m unittest testfile.py
+ 1.一个TestCase的实例就是一个测试用例
+ 2.TestSuite可以层层嵌套TestSuite和TestCase
+ 3.TestLoader用来加载TestCase和TestSuite的,比如defaultTestLoader
+ 4.TestRunner是用来执行测试用例的,通过TestLoader加载用例然后执行，比如TextTestRunner
+ 5.TestRunner测试的结果保存到TestResult实例中,比如TextTestResult
+
+ 多个模块文件
+ 1.discover参数,指定要执行哪些用例
+   python -m unittest discover -s d:/ut/mtf(目录)
+
+
+
