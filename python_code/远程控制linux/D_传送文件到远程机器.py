@@ -5,7 +5,7 @@ ssh.connect("ci.ytesting.com",22,"stt", "stt0707")
 
 
 sftp = ssh.open_sftp()
-sftp.put('ftp1.py', '/home/stt/ftp1.py')
+sftp.put('D_传送文件到远程机器.py', '/home/stt/D_传送文件到远程机器.py')
 sftp.close()
 
 ssh.close()

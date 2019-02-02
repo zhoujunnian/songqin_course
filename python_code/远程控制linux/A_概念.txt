@@ -1,0 +1,77 @@
+远程控制linux
+python的解决方案：
+paramiko
+pexpect
+安装paramiko库：
+pip install paramiko --default-timeout=60
+pip install paramiko -i https://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+
+paramiko使用
+paramiko模块是基于python实现了SSH2远程安全连接，支持认证和密钥方式，可以实现远程连接、命令执行、文件传输、中间SSH代理功能
+
+安装
+pip install paramiko
+或 easy_install paramiko
+paramiko依赖第三方的Crypto，Ecdsa和pyhton-devel,所以需要安装
+
+
+paramiko核心组件
+SSHClient类
+SSHClient类是SSH服务会话的高级表示，该类实现了传输、通道、以及SFTP的校验、建立的方法
+
+connect 方法
+
+connect方法实现了远程ssh连接并作校验
+
+参数
+hostname 连接的目标主机
+port=SSH_PORT 指定端口
+username=None 验证的用户名
+password=None 验证的用户密码
+pkey=None 私钥方式用于身份验证
+key_filename=None 一个文件名或文件列表，指定私钥文件
+timeout=None 可选的tcp连接超时时间
+allow_agent=True, 是否允许连接到ssh代理，默认为True 允许
+look_for_keys=True 是否在~/.ssh中搜索私钥文件，默认为True 允许
+compress=False, 是否打开压缩
+sock=None,
+gss_auth=False,
+gss_kex=False,
+gss_deleg_creds=True,
+gss_host=None,
+banner_timeout=None
+exec_command方法
+
+远程执行命令的方法，该命令的输入与输出流为标准输入、标出输出、标准错误输出
+
+参数
+command 执行的命令
+bufsize=-1 文件缓冲区大小
+timeout=None
+get_pty=False
+load_system_host_key方法
+
+夹在本地公钥文件，默认为~/.ssh/known_hosts
+
+参数
+filename=None 指定本地公钥文件
+set_missing_host_key_policy方法
+设置连接的远程主机没有本地主机密钥或HostKeys对象时的策略，目前支持三种：
+
+AutoAddPolicy 自动添加主机名及主机密钥到本地HostKeys对象，不依赖load_system_host_key的配置。即新建立ssh连接时不需要再输入yes或no进行确认
+WarningPolicy 用于记录一个未知的主机密钥的python警告。并接受，功能上和AutoAddPolicy类似，但是会提示是新连接
+RejectPolicy 自动拒绝未知的主机名和密钥，依赖load_system_host_key的配置。此为默认选项
+用法：
+set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+SFTPClient类
+SFTPCLient作为一个sftp的客户端对象，根据ssh传输协议的sftp会话，实现远程文件操作，如上传、下载、权限、状态
+
+from_transport(cls,t) 创建一个已连通的SFTP客户端通道
+put(localpath, remotepath, callback=None, confirm=True) 将本地文件上传到服务器 参数confirm：是否调用stat()方法检查文件状态，返回ls -l的结果
+get(remotepath, localpath, callback=None) 从服务器下载文件到本地
+mkdir() 在服务器上创建目录
+remove() 在服务器上删除目录
+rename() 在服务器上重命名目录
+stat() 查看服务器文件状态
+listdir() 列出服务器目录下的文件
