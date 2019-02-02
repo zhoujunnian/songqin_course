@@ -1,3 +1,8 @@
+# coding=utf-8
+
+"""
+有参数的函数
+"""
 def endsign(func):
     def wrapper(*args,**kargs):
         print('args:',args)
