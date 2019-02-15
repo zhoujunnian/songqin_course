@@ -1,8 +1,8 @@
-# coding=utf8
-class Tiger:
+# coding=utf-8
+class Tiger(object):
     classname = 'tiger'
 
-    def __init__(self,weight=100):
+    def __init__(self,weight=200):
         self.weight = weight
 
     def roar(self):
@@ -20,15 +20,10 @@ class Tiger:
 
 class NeTiger(Tiger):
     color = 'yellow white'
-    classname = 'northeast tiger'
 
-    def __init__(self,weight=200):
-        Tiger.__init__(self,weight)
-
-    def roar(self):
-        print('wow!!! wow!!! wow!!!')
-        self.weight -= 5
-
+    def __init__(self,weight=500):
+        Tiger.__init__(self,weight)     # 父类有初始化方法，显式地调用父类的初始化方法，这样才会调用父类地初始化方法
+        print self.weight
     @staticmethod
     def jump():
         print('3 meters high')
@@ -45,23 +40,14 @@ class ScTiger(Tiger):
         print('2 meters high')
 
 
-tiger = Tiger()
-print(tiger.weight)
 neTiger = NeTiger()
-print(neTiger.weight)
 scTiger = ScTiger()
 
 print('---- 先看看东北虎 -----')
 neTiger.roar()
 neTiger.jump()
-print(neTiger.classname)
 
 print('---- 再看看华南虎 -----')
 scTiger.roar()
 scTiger.jump()
 
-
-print('---- 再看看老虎 -----')
-tiger.roar()
-
-print(scTiger.classname)

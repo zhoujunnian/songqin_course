@@ -5,7 +5,7 @@ class Tiger:
         self.weight = weight
 
     def tellWeight(self):
-        print(f'my weight is {self.weight}')
+        print('my weight is '+ str(self.weight))
 
     @staticmethod
     def roar():
@@ -23,12 +23,9 @@ t1.roar()
 t1.roar2()
 t1.tellWeight()
 
-
 t2.roar()
 t2.roar2()
 t2.tellWeight()
 
-
-
 # Tiger.tellWeight()
-# Tiger.tellWeight(t1)
+# Tiger.tellWeight(t1)  # 另一种实例化方法

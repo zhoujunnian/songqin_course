@@ -1,7 +1,12 @@
-class Tiger(object):
+# coding=utf8
+"""
+多态：同样的方法通用，在不同的类型的对象上表现出不同的 特性，就称之为多态，
+比如：一个类的子类和父类，不同的实例对象调用同样的方法，但表现出来的行为却不一样，这种特点就是多态
+"""
+class Tiger:
     classname = 'tiger'
 
-    def __init__(self,weight=200):
+    def __init__(self,weight=100):
         self.weight = weight
 
     def roar(self):
@@ -19,9 +24,14 @@ class Tiger(object):
 
 class NeTiger(Tiger):
     color = 'yellow white'
+    classname = 'northeast tiger'
 
     def __init__(self,weight=200):
         Tiger.__init__(self,weight)
+
+    def roar(self):     # 重定义
+        print('wow!!! wow!!! wow!!!')
+        self.weight -= 5
 
     @staticmethod
     def jump():
@@ -39,14 +49,23 @@ class ScTiger(Tiger):
         print('2 meters high')
 
 
+tiger = Tiger()
+print(tiger.weight)
 neTiger = NeTiger()
+print(neTiger.weight)
 scTiger = ScTiger()
 
 print('---- 先看看东北虎 -----')
 neTiger.roar()
 neTiger.jump()
+print(neTiger.classname)
 
 print('---- 再看看华南虎 -----')
 scTiger.roar()
 scTiger.jump()
 
+
+print('---- 再看看老虎 -----')
+tiger.roar()
+
+print(scTiger.classname)

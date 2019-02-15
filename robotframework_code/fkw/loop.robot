@@ -6,7 +6,7 @@
 |    | : FOR | ${animal} | IN | cat | dog |
 |    |    | Log | ${animal} |
 |    |    | Log | hehe |
-|    | Log | Outside loop |
+|    | Log | Outside 循环嵌套与算法 |
 
 | For-Loop-In-Range |
 |    | : FOR | ${INDEX} | IN RANGE | 1 | 3 |
