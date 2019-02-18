@@ -3,7 +3,7 @@ import time,os
 from subprocess import check_output,CalledProcessError,STDOUT,Popen,PIPE
 
 # 输出视频文件
-outputfile = 'e:/tmp/'  + time.strftime('%Y%m%d_%H%M%S', time.localtime()) + '.mp4'
+outputfile = 'e:/tmp/'  + time.strftime('%Y%模块与包%d_%H%M%S', time.localtime()) + '.mp4'
 
 # 工具目录
 

@@ -26,7 +26,7 @@ cmd4 = 'cat myfile'
 stdin, stdout, stderr = ssh.exec_command(cmd4)
 print(stdout.read()+ stderr.read())
 
-cmd = "date +%Y%m%d_%H%M%S;free"
+cmd = "date +%Y%模块与包%d_%H%M%S;free"
 stdin, stdout, stderr = ssh.exec_command(cmd)
 memInfo = stdout.read()
 print [memInfo.splitlines()[0],memInfo.splitlines()[2]]

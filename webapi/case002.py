@@ -12,7 +12,7 @@ sessionid = cookies['sessionid']
 
 # 先添加一门课程
 from datetime import datetime
-courseName = f'python_{datetime.now().strftime("%Y-%m-%d_%H:%M:%S")}'
+courseName = f'python_{datetime.now().strftime("%Y-%模块与包-%d_%H:%M:%S")}'
 retDict1 = add_course(courseName, 'python语言', '2', sessionid)
 assert retDict1['retcode'] == 0
 

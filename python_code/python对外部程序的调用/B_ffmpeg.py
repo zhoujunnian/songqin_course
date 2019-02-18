@@ -2,7 +2,7 @@
 import time,os
 
 # 输出视频文件,带上当前年月日_时分秒
-outputfile = '/Users/zhoujunjun/Movies'  + time.strftime('%Y%m%d_%H%M%S', time.localtime()) + '.mp4'
+outputfile = '/Users/zhoujunjun/Movies'  + time.strftime('%Y%模块与包%d_%H%M%S', time.localtime()) + '.mp4'
 
 # 工具目录
 ffmpegDir = '/usr/local/Cellar/ffmpeg/4.1_3/bin/ffmpeg'

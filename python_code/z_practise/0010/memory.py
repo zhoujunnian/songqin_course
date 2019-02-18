@@ -32,7 +32,7 @@ while True:
     # 别忘了 * 100
     memUsage = (memFree + buffers + cached) *100.0/memTotal
     # 搜索时间格式
-    memUsage = '%s     %.2f%%' % (time.strftime('%Y%m%d_%H:%M:%S'),memUsage)
+    memUsage = '%s     %.2f%%' % (time.strftime('%Y%模块与包%d_%H:%M:%S'),memUsage)
     print(memUsage)
 
     with open('ret.txt','a') as f:

@@ -8,7 +8,7 @@ VIDEO_DIR  = 'd:\\'
 
 def recording():
     # 输出视频文件
-    outputfile = VIDEO_DIR  + time.strftime('%Y%m%d_%H%M%S', time.localtime()) + '.mp4'
+    outputfile = VIDEO_DIR  + time.strftime('%Y%模块与包%d_%H%M%S', time.localtime()) + '.mp4'
 
     # 工具目录
 

@@ -1,0 +1,152 @@
+python中的模块和包
+1.在python中，代码是放在py为扩展名文件中的一个.py文件就称之为一个模块(Module)
+2.又可以把许多模块按照功能放到不同的目录中来组织模块，这些组织存放模块文件的目录，我们称之为包(Package)
+3.模块化的其他好处
+	1）以库形式封装功能，方便给别的代码调用
+	    库其实就是模块和包，可以使用自己写的库，python标准库，第三方库
+	2）避免变量名冲突（包括函数名）
+		如果一个代码文件特别的大，变量的名字容易发生重复，需要想出不同的变量名或者函数名。
+		如果采用模块分割代码，每个模块文件代码都不是很多，就可以大大的缓解这个问题，每个
+		模块中的变量名作用域只在本模块中。
+
+模块的定义
+1.所谓的模块其实就是一个py文件，定义模块就是创建py文件，以前我们创建的py文件都是一个模块
+2.模块名就是py文件名（不包括.py）比如 test.py
+3.模块中的标识符（identifier）
+	1）变量（一些常量，比如配置项）
+	2）函数（供其它模块调用）
+	3）类
+
+
+使用模块
+1.方法一
+import module1,module2,module3
+	1）可以调用模块里面所有的变量
+	2）注意：2个模块之间不能互相import导入
+2.方法二
+from module import var
+from module import var1,var2
+	1）从模块里面导入标识符（变量、函数、类），直接使用
+	2）优缺点：
+		可以少输前缀；
+		一般用在大量调用的情况下，少输入一些字符；
+		但是，如果代码新增调用，需要修改import语句；
+3.别名
+import module as newname
+from module import var as newname 	# 把模块var别名为newname
+	1）长名字缩短
+	2）防止同名（库A里面有util,库B里面也有util），
+		如，import calc as c
+			from calc import calc_s_c as csc # 会执行模块calc里面所有的内容，不是只执行导入的标识符
+4.全部导入
+from module import *
+一般不建议使用，潜在的污染名字空间的危险
+from m1 import calc
+from m2 import *
+如果模块m2里面也有calc，那么就会覆盖模块m1的calc，代码里面执行的是m2的calc而不是m1的calc
+
+
+自定义包
+1.什么是包
+	1）当我们的项目比较大的时候，模块还不够；
+	2）将功能相关的模块放到相应的目录结构中来组织模块，
+	   这些组织存放模块文件的目录，我们称之为包（package）
+2.包的结构
+	1）顶层的包，phone。
+	2）子包，voicedta、fax、mobile。
+	3）包括初始化文件__init__.py，
+       可以是空文件，
+       也可以包含初始化操作：
+       特殊用法：定义__all__=[]
+       from package xx import * 时,
+	   会告诉解析器包含它的目录是一个python包，导入包的时候，会执行这个文件
+	   注意：python3.3之前，包括python2.7，一定要有__init__.py,否则不能导入包里面的模块
+	4）包里面的各个模块文件
+3.调用包内模块的方法
+	1）方法一
+	import phone.mobile.analog
+	phone.mobile.analog.dial()
+	2）方法二
+	from phone.mobile import analog
+	analog.dial()
+	3）方法三
+	from phone.mobile.analog import dial
+	dial()
+
+
+python的标准库
+1.标准库（库就是python里面的模块和包）
+	python安装包里面提供的功能模块和包，主要包括：
+	1）内置类型和函数
+		比如 len、int、open等
+		直接使用，无需import
+	2）功能模块
+		包含程序设计所需的常用功能，需要用import 导入它们就可使用，
+		根据python文档查看使用细节
+
+
+问题
+1.import 或者 from...import 时，解析器如何找到模块文件的？
+	1）解析器程序直接包含的，无需寻找，比如sys（sys.builtin_module_names）
+	2）sys.path
+		>>>import sys
+		>>>sys.path,第一个是空字符串，是当前工作目录
+		>>>import os
+		>>>os.__file__，可以看到模块所在的位置
+	3）sys.path的值怎么来的？
+		a.自动加入启动脚本所在的目录
+		b.自动加入标准库目录（D:\\tools\\python36开头的）
+		c.PYTHONPATH环境变量里包含的目录。这是一个环境变量设置，
+		  如果没有设置则忽略。该环境变量设置和PATH环境变量的设置方法类似
+		  set PYTHONPATH=d:\;c:\ ,窗口关掉，就不会起作用，这种方法是不能永久保存的
+		  echo %PYTHONPATH%
+		d.lib/site-packages下面.path
+
+标准库模块、第三方模块
+1.一般都安装在lib 或者 lib/site-packages 目录
+2.可以搜索到，无须我们操心
+
+安装第三方库
+1.开发者是全世界的程序员
+2.第三方库和标准库的区别：不是解析器安装后内置的。
+3.安装好以后，其导入使用的方式和标准库、自己开发的库没有任何区别
+4.安装方式
+	1）下载，拷贝到项目工程目录下面
+	2）官方源PyPI(Python Package Index)
+		目前可以使用pip安装，类似yum、apt-get、npm;
+		pip在新版的python解析器安装好后就有了，
+		命令格式：
+		pip install <第三方库名>
+		如，pip install Django
+		有时可以使用国内豆瓣的源：
+		pip install Django -i https://pypi.douban.com/simple/
+	3）不要在python的终端输入pip，终端输入的是python代码，pip是在命令行输入
+5.卸载命令
+	pip uninstall Django
+6.指定版本
+	pip install SomePackage==1.0.4		# specific version
+	pip install 'SomePackage>=1.0.4'	# minimum version
+7.更新安装
+	pip install selenium -U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

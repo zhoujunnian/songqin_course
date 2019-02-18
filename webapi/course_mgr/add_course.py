@@ -7,7 +7,7 @@ import requests,json
 
 import time
 
-curTime = time.strftime('%Y-%m-%d',time.localtime(time.time()))
+curTime = time.strftime('%Y-%模块与包-%d',time.localtime(time.time()))
 
 payload  = {
     'action':'add_course',
