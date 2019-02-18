@@ -1,3 +1,4 @@
+# coding=utf-8
 try:
     ohmy
     b = 4/0

@@ -1,0 +1,89 @@
+捕获一种异常
+1.关键字 try...except...
+try:
+	b = 4/0
+except ZeroDivisionError:
+	print('handle ZeroDivisionError')
+2.try 代码块 指明作用域
+3.ZeroDivisionError 指明专门捕获ZeroDivisionError异常
+4.except 代码块 是异常处理的代码
+5.执行结果
+	1）除以0的异常被 try...except捕获了
+	2）并执行了except里面的代码
+	3）其它的异常不会被捕获
+
+捕获多种异常
+1.
+try:
+	ohmy
+	b = 4/0
+except ZeroDivisionError:
+	print('handle ZeroDivisionError')
+except NameError:
+	print('handle NameError')
+2.ZeroDivisionError 指明专门捕获ZeroDivisionError异常
+3.NameError 指明专门捕获NameError异常
+4.对应的处理代码区块
+5.执行结果
+	1).是NameError 而不是 ZeroDivisionError,因为try只要出现异常，后面的代码就不再执行，所以不会执行 b=4/0
+
+得到异常对象
+1.捕获后得到 详细的异常信息
+	try:
+		ohmy
+	except NameError as e:
+		print('handle NameError')
+2.e 就是异常对象,python3用as，python2用逗号，
+3.我们可以打印出里面存储的具体错误信息
+
+捕获所有异常
+1.有时我们并不知道会抛出什么异常
+2.捕获所有异常
+	try：
+		ohmy
+		4/0
+	except Exception as e:
+		print('handle unkown except',e)
+3.Exception 是所有异常的父类，所以能捕获所有的异常
+4.简单写成
+	try:
+		ohmy
+	except:
+		print('handle unkown except')
+5.如果要知道异常信息
+	import traceback
+	try:
+		ohmy
+	except:
+		print('handle unkown except\n' + \ traceback.format_exc())
+
+finally 语句
+1.不管是否有异常，我们都有执行一段代码
+	try:
+		b = 4/0
+		ohmy
+	except ZeroDivisionError:
+		print('handle ZeroDivisionError')
+	except NameError:
+		print('handle NameError')
+	except:
+		print('handle unkown except')
+	finally:
+		print('in finally')
+2.finally 一定要放在最后
+
+else 语句
+1.没有异常的情况下，要执行一段代码
+	try:
+    print('do something')
+except ZeroDivisionError:
+    print('handle ZeroDivisionError')
+except NameError:
+    print('handle NameError')
+except :
+    print('handle unkown exeption')
+else:
+    print('haha, no exception')
+finally:
+    print('in finally')
+2.else 必须跟在所有的except 代码块后面，在finally前面

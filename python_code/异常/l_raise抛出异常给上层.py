@@ -1,3 +1,4 @@
+# coding=utf-8
 def f3():
     try:
         print('in f3 - begin')
@@ -5,8 +6,7 @@ def f3():
         print('in f3 - end')
     except:
         print('f3中捕获了异常')
-
-
+        raise
 
 
 def f2():
@@ -16,6 +16,7 @@ def f2():
         print('in f2 - end')
     except:
         print('f2中捕获了异常')
+        raise
 
 
 def f1():

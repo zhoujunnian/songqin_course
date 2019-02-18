@@ -11,7 +11,7 @@ driver.get('https://www.vmall.com/')
 driver.find_element_by_css_selector("div.s-sub a[href*='consumer.huawei']").click()
 
 # 先试试，如果不点击 软件应用会是什么结果
-# 发现必须要点击， 不然selenium.common.exceptions.ElementNotVisibleException
+# 发现必须要点击， 不然selenium.common.异常.ElementNotVisibleException
 # 后面再讲解，怎么移动到这个元素上，而不去点击它
 driver.find_element_by_css_selector("div.s-sub    a.icon-dropdown").click()
 driver.find_element_by_css_selector("a[href*='appstore.huawei.com']").click()

@@ -1,5 +1,5 @@
 try:
-    sdfsdf
+    #sdfsdf
     print('do something')
 except ZeroDivisionError:
     print('handle ZeroDivisionError')

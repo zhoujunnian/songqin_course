@@ -1,3 +1,4 @@
+# coding=utf-8
 def f3():
     print('in f3 - begin')
     b = 4/0
