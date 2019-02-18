@@ -87,3 +87,25 @@ else:
 finally:
     print('in finally')
 2.else 必须跟在所有的except 代码块后面，在finally前面
+
+函数调用对栈
+1.异常从调用栈里面抛出
+2.异常发生
+解析器中断当前代码的执行，并抛出一个异常对象
+	1）并在函数的调用栈从下到上，层层的寻找捕获处理该异常的代码
+	2）如果能找到就执行对应的代码
+	3）如果不能则会一直找到最外层的函数结束本次执行
+我们可以，根据需要在不同的函数调用层，捕获异常处理
+
+自定义异常
+1.继承自Exception
+	class NameTooLongError（Exception):
+		pass
+	class NameTooShortError(Exception):
+		pass
+2.使用raise抛出
+	raise NameTooShortError
+3.抛出异常用在：
+	1）当函数里面出现错误，代码无法继续执行的时候
+	2）告诉上层调用代码，什么样执行错误产生了
+	3）由上层调用代码决定如何处理

@@ -10,11 +10,14 @@ def bubble(alist):
 
 
 
-
 a = [3,5,7,2,56,34,54,23,21,56,33,2]
-print(bubble(a))
+a.sort()
+print a
+#print(bubble(a))
 
-
+"""
+不理解，后面有时间再探究一下吧
+"""
 
 
 

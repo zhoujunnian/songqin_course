@@ -1,3 +1,4 @@
+# coding=utf-8
 nba_ages = [
     ('Mike Jordan',19),
     ('Jason Kid',18),
