@@ -3,14 +3,14 @@
 __author__ = "zhoujunjun"
 
 import paramiko
-import keyring
+from config import password,username,private_key_file,hostname
 
 
-private_key = paramiko.RSAKey.from_private_key_file(r'', password=password)
+private_key = paramiko.RSAKey.from_private_key_file(private_key_file, password=password)
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-ssh.connect(hostname='', port=32200, username="", pkey=private_key)
+ssh.connect(hostname=hostname, port=32200, username=username, pkey=private_key)
 
 stdin, stdout, stderr = ssh.exec_command('pwd')
 
