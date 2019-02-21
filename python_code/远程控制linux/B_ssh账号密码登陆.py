@@ -4,7 +4,7 @@ import paramiko
 # 创建SSHClient 实例对象
 ssh = paramiko.SSHClient()  
 
-# 调用方法，表示没有存储远程机器的公钥，允许访问
+# 调用方法，表示没有存储远程机器的公钥，允许访问,即是 通过公共方式进行认证 (不需要在known_hosts 文件中存在)
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 # 连接远程机器  地址、端口、用户名密码

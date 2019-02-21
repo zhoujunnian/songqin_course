@@ -5,13 +5,13 @@ __author__ = "zhoujunjun"
 import paramiko
 import keyring
 
-password = 'Aa0789351318'
-private_key = paramiko.RSAKey.from_private_key_file(r'/Users/zhoujunjun/.ssh/id_rsa_saqa', password=password)
+
+private_key = paramiko.RSAKey.from_private_key_file(r'', password=password)      # 这里要加上登陆的密码
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-ssh.connect(hostname='10.82.51.10', port=32200, username="wb.zhoujunnian", pkey=private_key,  allow_agent=False)
+ssh.connect(hostname='', port=32200, username="", pkey=private_key)
 
 stdin, stdout, stderr = ssh.exec_command('pwd')
 
