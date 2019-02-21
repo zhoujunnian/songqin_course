@@ -1,3 +1,4 @@
+# coding=utf-8
 def playfootball():
     print("拿起足球")
     print("来到球场上")
@@ -7,4 +8,4 @@ def playfootball():
 print(playfootball)
 print(type(playfootball))
 
-# playfootball()
+playfootball()
