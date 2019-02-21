@@ -6,8 +6,7 @@ import paramiko
 import keyring
 
 
-private_key = paramiko.RSAKey.from_private_key_file(r'', password=password)      # 这里要加上登陆的密码
-
+private_key = paramiko.RSAKey.from_private_key_file(r'', password=password)
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
