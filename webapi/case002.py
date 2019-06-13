@@ -39,4 +39,4 @@ for one in coureListBefore:
         delete_course(one['id'], sessionid)
 
 
-print('\n========= test case pass =============')
+print('\n========= temp case pass =============')

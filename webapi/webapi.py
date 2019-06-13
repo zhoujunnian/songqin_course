@@ -29,7 +29,7 @@ def add_course(name, desc, displayidx, sessionid):
     payload = {
         'action': 'add_course',
         # 格式化字符串的方式来构造消息
-        'data': '''
+        'detect_data': '''
         {
           "name":"%s",
           "desc":"%s",

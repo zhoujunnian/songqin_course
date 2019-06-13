@@ -8,16 +8,16 @@ import requests,json
 import time
 
 curTime = time.strftime('%Y-%模块与包-%d',time.localtime(time.time()))
-
+print(curTime)
 payload  = {
     'action':'add_course',
-    'data':f'{{"name":"初学{curTime}","desc":"初中化学课程","display_idx":"1"}}'
+    'detect_data':f'{{"name":"初学{curTime}","desc":"初中化学课程","display_idx":"1"}}'
 }
 
-response = requests.post("http://localhost/api/mgr/sq_mgr/",data=payload)
+#response = requests.post("http://localhost/api/mgr/sq_mgr/",data=payload)
 
-r = response.json()
-print(r)
+# r = response.json()
+# print(r)
 
 
 

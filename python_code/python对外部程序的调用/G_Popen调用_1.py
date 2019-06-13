@@ -3,7 +3,7 @@ from subprocess import PIPE, Popen
 import time,sys
 
 popen = Popen(
-    'python s4_1.py',
+    'python开发 s4_1.py',
     stdin  = PIPE,
     stdout = PIPE,
     stderr = PIPE,

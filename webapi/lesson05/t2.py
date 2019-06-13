@@ -5,7 +5,7 @@ import requests
 
 payload  = {
     'action':'add_course',
-    'data':'''{
+    'detect_data':'''{
           "name":"初中化学44",
           "desc":"初中化学课程44",
           "display_idx":"4"

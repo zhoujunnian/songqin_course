@@ -16,7 +16,7 @@ retListBefore = list_course()
 # 再添加一门课程
 payload  = {
     'action':'add_course',
-    'data': '{"name":"python","desc":"python语言","display_idx":"2"}'
+    'detect_data': '{"name":"python开发","desc":"python语言","display_idx":"2"}'
 }
 
 response = requests.post("http://localhost/api/mgr/sq_mgr/",data=payload)
@@ -38,8 +38,8 @@ for one in retListAfter:
 
 # 检查是否是刚刚添加的课程
 assert newcourse!=None
-assert newcourse['name']=='python'
+assert newcourse['name']=='python开发'
 assert newcourse['desc']=='python语言'
 assert newcourse['display_idx']==2
 
-print('test case pass')
+print('temp case pass')

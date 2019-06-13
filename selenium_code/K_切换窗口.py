@@ -1,0 +1,40 @@
+# coding=utf-8
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(5)
+driver.get('file:///Users/zhoujunjun/PycharmProjects/PycharmData/git_hub/songqin_course/selenium_code/html/s1.html')
+
+# 点击连接，打开新的窗口
+link = driver.find_element_by_id("baidulink")
+link.click()
+
+# 显示 标题栏 文本，可以发现还是在当前网页
+print(driver.title)
+
+#保存主窗口handle
+mainWindow = driver.current_window_handle
+
+print(driver.window_handles)
+
+for handle in driver.window_handles:
+    # 切换到新窗口
+    driver.switch_to.window(handle)
+    # 检查是否是我们要进入的window
+    if '百度' in driver.title:
+        break
+
+
+kw = driver.find_element_by_id("kw")
+kw.send_keys(u'松勤\n')
+
+
+#切换到主窗口
+driver.switch_to.window(mainWindow)
+#driver.find_element_by_tag_name("input").send_keys('hello world')
+
+input('press any key to quit...')
+driver.quit()
+
+
+# driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL, Keys.TAB)

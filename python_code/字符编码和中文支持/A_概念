@@ -1,0 +1,57 @@
+
+字符串编码和解码
+1.python3中字符串类型的内部表示其实是 UTF-16
+ python3中的编码：
+	 从Unicode字符串编码为指定格式的字节串：bytes对象
+	 ‘你好’.encode('utf8')
+ python3中的解码：
+	 从字节串（bytes对象）解码成字符串对象
+	 byteVar.decode('utf8')
+
+2.python2里面的字符串类型是原始的字节串
+	python2中的编码：从unicode对象编码为指导格式的字节串（string对象）
+	python2中的解码：从字节串（string对象）解码成unicode对象
+
+3.显示utf8编码字符的过程
+ 文字以某种编码保存在文件中，程序读取文件中的文字并且解码到Unicode。
+ 程序调用操作系统Window是服务，按照Unicode数字码在字体文件中查找字体图像，画到窗口上
+
+4.处理中文
+ python3解析器缺省使用utf8码来解码代码文件
+ python2解析器缺省使用ascii码来解码代码文件
+
+5.终端输出中文
+1)终端里面执行下面的程序，来打印中文字符到屏幕上
+ print('中文')
+2)我们的输入的字符是用utf8编码的，而‘中文’两个字utf8编码 0xe4b8ad 0xe69687
+3)执行时，解析器将字符串内容解码为Unicode，输出给终端设备，必须将 unicode编码为
+ 一种编码格式的字节串
+ 4）解析器根据 sys.stdout.ending 对之进行转换
+
+6.终端输入中文
+1）input()用户输入中文
+2）input函数自动根据终端输入的字符的编码方式
+   sys.stdin.encoding
+
+7.输出到文件
+python2
+1）文件对象没有文件的编码信息
+   open（name【，mode【，buffering]])
+2)包含中文字符的unicode字符串到文件的时候，必须要显式编码
+ # coding=utf-8
+ a = u'我们这时候‘
+ print a
+ fh = open('file1','w')
+ fh.write(a.encode('utf8'))
+ fh.close()
+python3
+1)文件对象包含了文件的编码信息：对文本模式打开有效
+ open（file,mode='r',buffering=-1,encoding=None,errors=None,...)
+2)在读写文件内容的时候，底层会以参数指定的编码方式对文件内容自动进行编码和解码
+3）os平台相关
+
+8.从文件读入
+python3 无需显式解码
+
+
+

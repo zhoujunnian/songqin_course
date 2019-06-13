@@ -5,7 +5,7 @@ def add_course_json(name,desc,displayidx):
     payload = {
         'action': 'add_course_json',
         # 格式化字符串的方式来构造消息
-        'data':
+        'detect_data':
         {
           "name":name,
           "desc":desc,
@@ -15,7 +15,7 @@ def add_course_json(name,desc,displayidx):
     }
 
     # data参数 就是构造消息体的
-    # 可以使用 data=json.dumps(payload)
+    # 可以使用 detect_data=json.dumps(payload)
     #  也可以使用 json=payload
     response = requests.post("http://localhost/apijson/mgr/sq_mgr/",
                              data=json.dumps(payload),

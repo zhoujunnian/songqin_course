@@ -14,7 +14,7 @@ driver.get('http://www.51job.com')
 driver.find_element_by_css_selector('div.ush > a').click()
 
 
-driver.find_element_by_id('kwdselectid').send_keys('python')
+driver.find_element_by_id('kwdselectid').send_keys('python开发')
 
 driver.find_element_by_id('work_position_input').click()
 
@@ -44,13 +44,13 @@ driver.find_element_by_id('funtype_click_bottom_save').click()
 
 driver.find_element_by_id('cottype_list').click()
 
-driver.find_element_by_css_selector('#cottype_list span[data-value="01"]').click()
+driver.find_element_by_css_selector('#cottype_list span[detect_data-value="01"]').click()
 
 
 
 driver.find_element_by_id('workyear_list').click()
 
-driver.find_element_by_css_selector('#workyear_list span[data-value="02"]').click()
+driver.find_element_by_css_selector('#workyear_list span[detect_data-value="02"]').click()
 
 
 driver.find_element_by_css_selector('span.p_but').click()

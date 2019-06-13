@@ -6,7 +6,7 @@ def add_course(name,desc,displayidx):
     payload = {
         'action': 'add_course',
         # 格式化字符串的方式来构造消息
-        'data':'''
+        'detect_data':'''
         {
           "name":"%s",
           "desc":"%s",
@@ -46,7 +46,7 @@ def list_course():
 coureListBefore = list_course()['retlist']
 
 # 再添加一门课程
-retDict = add_course('python','python语言','2')
+retDict = add_course('python开发','python语言','2')
 assert retDict['retcode'] == 0
 
 # 再列出课程
@@ -63,8 +63,8 @@ for one in coureListAfter:
 
 # 检查是否是刚刚添加的课程
 assert newcourse!=None
-assert newcourse['name']=='python'
+assert newcourse['name']=='python开发'
 assert newcourse['desc']=='python语言'
 assert newcourse['display_idx']==2
 
-print('\n========= test case pass =============')
+print('\n========= temp case pass =============')

@@ -52,10 +52,10 @@ while True:
         ele.click()
 
         if ele.text  in  [u'无','--']:
-            print u'暂时无票，继续查询'
+            print('暂时无票，继续查询')
             time.sleep(1)
         else:
-            print u'有票，购买'
+            print('有票，购买')
     except:
         pass
 

@@ -3,7 +3,7 @@ import time
 
 from selenium.webdriver.support.ui  import Select
 
-driver = webdriver.Chrome(r'd:\tools\webdrivers\chromedriver.exe')
+driver = webdriver.Chrome()
 driver.implicitly_wait(10)
 
 
@@ -51,4 +51,4 @@ for one in theTrains:
 
 
 
-driver.quit()
+#driver.quit()

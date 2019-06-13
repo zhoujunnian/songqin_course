@@ -1,6 +1,7 @@
 try:
-    ohmy
-    b = 4/0
+    'ohmy'
+    #b = 4/0
+    repr(1,1,1)
     print('hello')
 except ZeroDivisionError:
     print('handle ZeroDivisionError')

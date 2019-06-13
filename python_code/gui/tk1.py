@@ -3,7 +3,7 @@ from Tkinter import *
 import tkMessageBox
 
 root = Tk()              # 创建主窗口
-root.title('test')       # 设置主窗口 标题
+root.title('temp')       # 设置主窗口 标题
 root.geometry("300x200+200+200") # 设置主窗口 大小和位置
 
 

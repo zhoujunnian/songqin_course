@@ -1,6 +1,7 @@
 # 读取文件内容
 def getFileContent(filePath):
     fh = open(filePath)
+    print(type(fh))
     fc = fh.read()
     fh.close()
     return fc

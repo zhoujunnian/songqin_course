@@ -1,7 +1,7 @@
 # coding=utf-8
 import unittest
-import run_modul_testcase.feature1.test_m2
-import run_modul_testcase.feature2.test_m4
+import unittest.run_modul_testcase.feature1.test_m2
+import unittest.run_modul_testcase.feature2.test_m4
 
 # 使用 模块 加载函数
 lfm = unittest.defaultTestLoader.loadTestsFromModule
@@ -14,10 +14,10 @@ ts= unittest.TestSuite()
 
 #  加载 test_m1模块 里面所有的用例
 #ts.addTest(lfm(run_modul_testcase.feature1.test_m1))
-ts.addTest(lfm(run_modul_testcase.feature1.test_m2))
+ts.addTest(lfm(unittest.run_modul_testcase.feature1.test_m2))
 
 #  加载 test_m4.WidgetTestCase1类 里面的所有测试用例
-ts.addTest(lftc(run_modul_testcase.feature2.test_m4.WidgetTestCase1))
+ts.addTest(lftc(unittest.run_modul_testcase.feature2.test_m4.WidgetTestCase1))
 
 runner = unittest.TextTestRunner()
 runner.run(ts)

@@ -8,7 +8,7 @@ driver.implicitly_wait(10)
 # 抓取信息
 driver.get('http://www.51job.com')
 
-driver.find_element_by_id('kwdselectid').send_keys('python')
+driver.find_element_by_id('kwdselectid').send_keys('python开发')
 # 点击工作地点
 driver.find_element_by_id('work_position_input').click()
 

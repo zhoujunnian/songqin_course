@@ -14,4 +14,4 @@ def calc_s_c(num):
     print('cube   of num is %s' % num ** 3)
 
 print('*** in calc  end *** ')
-print var1
+print (var1)

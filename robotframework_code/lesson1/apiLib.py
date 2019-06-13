@@ -15,7 +15,7 @@ def list_course():
 def add_course(name,desc,displayidx):
     payload  = {
         'action':'add_course',
-        'data': '{"name":"%s","desc":"%s","display_idx":"%s"}' % (name,desc,displayidx)
+        'detect_data': '{"name":"%s","desc":"%s","display_idx":"%s"}' % (name,desc,displayidx)
     }
 
     response = requests.post("http://localhost/api/mgr/sq_mgr/",

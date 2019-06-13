@@ -14,7 +14,7 @@ driver.find_element_by_css_selector('div.ush > a').click()
 
 
 # 输入选择关键词
-driver.find_element_by_id('kwdselectid').send_keys('python')
+driver.find_element_by_id('kwdselectid').send_keys('python开发')
 
 # 工作地点选择
 driver.find_element_by_id('work_position_input').click()
@@ -64,11 +64,11 @@ driver.find_element_by_id('funtype_click_bottom_save').click()
 
 # 公司性质选 外资 欧美
 driver.find_element_by_id('cottype_list').click()
-driver.find_element_by_css_selector('#cottype_list span.li[data-value="01"]').click()
+driver.find_element_by_css_selector('#cottype_list span.li[detect_data-value="01"]').click()
 
 # 工作年限选
 driver.find_element_by_id('workyear_list').click()
-driver.find_element_by_css_selector('#workyear_list span.li[data-value="02"]').click()
+driver.find_element_by_css_selector('#workyear_list span.li[detect_data-value="02"]').click()
 
 # 点击搜索
 driver.find_element_by_css_selector('div.p_sou > span.p_but').click()

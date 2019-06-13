@@ -16,7 +16,7 @@ sessionid = cookies['sessionid']
 coureListBefore = list_course(sessionid)['retlist']
 
 # 再添加一门课程
-retDict = add_course('python', 'python语言', '2', sessionid)
+retDict = add_course('python开发', 'python语言', '2', sessionid)
 assert retDict['retcode'] == 0
 
 # 再列出课程
@@ -34,10 +34,9 @@ for one in coureListAfter:
         newcourse = one
         break
 
-
 # 检查是否是刚刚添加的课程，assert假如没有通过，就会抛异常，就不会执行后面的操作了
 assert newcourse is not None
-assert newcourse['name'] == 'python'
+assert newcourse['name'] == 'python开发'
 assert newcourse['desc'] == 'python语言'
 assert newcourse['display_idx'] == 2
 
@@ -45,4 +44,4 @@ assert newcourse['display_idx'] == 2
 
 delete_course(newcourse['id'], sessionid)
 
-print('\n========= test case pass =============')
+print('\n========= temp case pass =============')
